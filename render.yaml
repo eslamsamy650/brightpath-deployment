@@ -1,0 +1,25 @@
+# Render Blueprint — backend API only
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: brightpath-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci && npx prisma generate
+    startCommand: npx prisma migrate deploy && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: API_PREFIX
+        value: /api/v1
+      - key: FRONTEND_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true

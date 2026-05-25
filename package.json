@@ -1,0 +1,9 @@
+{
+  "name": "brightpath-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "AUTO_INSTALL=1 ./run.sh",
+    "start": "node backend/src/server.js"
+  }
+}

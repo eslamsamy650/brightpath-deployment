@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: brightpath-postgres
+    environment:
+      POSTGRES_USER: brightpath
+      POSTGRES_PASSWORD: brightpath
+      POSTGRES_DB: brightpath
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - brightpath
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brightpath -d brightpath"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: brightpath-backend
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+      API_PREFIX: /api/v1
+      FRONTEND_URL: http://localhost:5173
+      DATABASE_URL: postgresql://brightpath:brightpath@postgres:5432/brightpath?schema=public
+      JWT_ACCESS_SECRET: brightpath_secret_access_key_development_1234567890
+      JWT_REFRESH_SECRET: brightpath_secret_refresh_key_development_1234567890
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/scripts:/app/scripts
+      - ./backend/prisma:/app/prisma
+      - backend-uploads:/app/uploads
+    networks:
+      - brightpath
+    command: sh scripts/docker-entrypoint.sh
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:4000/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: brightpath-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - brightpath
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  postgres-data:
+  backend-uploads:
+
+networks:
+  brightpath:
+    driver: bridge
