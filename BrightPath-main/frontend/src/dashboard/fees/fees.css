@@ -1,0 +1,328 @@
+.fees-page,
+.payments-page {
+  display: grid;
+  gap: 16px;
+}
+
+.fee-overview-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fee-overview-card {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 10px;
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+}
+
+.fee-overview-card span {
+  color: #667085;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.fee-overview-card strong {
+  color: var(--bp-primary, #1e3a5f);
+  font-size: 1.45rem;
+}
+
+.fee-overview-card--warning strong {
+  color: #b54708;
+}
+
+.fee-structure-table,
+.payments-log-table {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fee-structure-table table,
+.payments-log-table table {
+  width: 100%;
+}
+
+.fee-structure-table th,
+.fee-structure-table td,
+.payments-log-table th,
+.payments-log-table td {
+  border-bottom: 1px solid #edf1f7;
+  padding-block: 12px;
+  padding-inline: 14px;
+  text-align: start;
+}
+
+.fee-items-inline {
+  color: #475467;
+  font-size: 0.9rem;
+}
+
+.finance-modal-backdrop {
+  align-items: flex-start;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  overflow: auto;
+  padding: 24px 16px;
+  position: fixed;
+  z-index: 40;
+}
+
+.finance-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+  padding: 20px;
+  width: min(720px, 100%);
+}
+
+.finance-modal h3 {
+  margin: 0;
+}
+
+.finance-modal__section {
+  border: 1px solid #edf1f7;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.finance-modal__section-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.finance-row-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1.4fr 1fr auto;
+}
+
+.finance-modal label {
+  color: #344054;
+  display: grid;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.finance-modal input,
+.finance-modal select,
+.finance-modal textarea {
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 8px;
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.finance-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.finance-form-error {
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 8px;
+  color: #b42318;
+  padding: 10px 12px;
+}
+
+.finance-total-line {
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+
+.student-fee-card {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 10px;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.student-fee-card__metrics {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.student-fee-card__metric {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.student-fee-card__metric span {
+  color: #667085;
+  display: block;
+  font-size: 0.82rem;
+}
+
+.student-fee-card__metric strong {
+  color: var(--bp-primary, #1e3a5f);
+  font-size: 1.2rem;
+}
+
+.installment-list {
+  display: grid;
+  gap: 8px;
+}
+
+.installment-row {
+  align-items: center;
+  border: 1px solid #edf1f7;
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr auto auto;
+  padding: 10px 12px;
+}
+
+.installment-row.is-overdue {
+  border-color: #fecdca;
+  background: #fff8f6;
+}
+
+.installment-status {
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+}
+
+.installment-status--paid {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.installment-status--unpaid {
+  background: #f2f4f7;
+  color: #344054;
+}
+
+.installment-status--overdue {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.payments-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.payments-tabs button {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.payments-tabs button.is-active {
+  background: var(--bp-accent, #2e86c1);
+  border-color: transparent;
+  color: #fff;
+}
+
+.student-search-panel {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 10px;
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.student-search-results {
+  display: grid;
+  gap: 6px;
+}
+
+.student-search-hit {
+  background: #f8fafc;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-block: 10px;
+  padding-inline: 12px;
+  text-align: start;
+  word-break: break-word;
+}
+
+.student-search-hit.is-selected,
+.student-search-hit:hover {
+  border-color: #9fd0ef;
+  background: #eef7fd;
+}
+
+.receipt-print-stack {
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .receipt-print-stack,
+  .receipt-print-stack * {
+    visibility: visible;
+  }
+
+  .receipt-print-stack {
+    display: block;
+    inset: 0;
+    position: fixed;
+    width: 148mm;
+  }
+}
+
+.receipt-print {
+  border: 1px solid #d0d5dd;
+  color: #101828;
+  font-family: Tahoma, Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 148mm;
+  padding: 14mm 12mm;
+}
+
+.receipt-print h2 {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.receipt-print__grid {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.receipt-print__grid div {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .fee-overview-grid,
+  .student-fee-card__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

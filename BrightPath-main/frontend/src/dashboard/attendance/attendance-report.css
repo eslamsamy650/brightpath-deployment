@@ -1,0 +1,65 @@
+.attendance-report-page {
+  display: grid;
+  gap: 16px;
+}
+
+.attendance-report-table {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.attendance-report-table table {
+  border-collapse: collapse;
+  min-width: 920px;
+  width: 100%;
+}
+
+.attendance-report-table th,
+.attendance-report-table td {
+  border-bottom: 1px solid var(--bp-border, #d9e1ec);
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.attendance-report-table th:first-child,
+.attendance-report-table td:first-child {
+  position: sticky;
+  right: 0;
+  text-align: start;
+  background: #fff;
+}
+
+.attendance-report-table td:first-child button {
+  background: transparent;
+  color: var(--bp-primary, #1E3A5F);
+  padding: 0;
+  text-align: start;
+}
+
+.att-cell {
+  border-radius: 7px;
+  display: inline-flex;
+  font-weight: 900;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  background: #edf2f7;
+  color: #596780;
+}
+
+.status-PRESENT { background: #eaf8ef; color: #177245; }
+.status-ABSENT { background: #fff0f0; color: #b42318; }
+.status-LATE { background: #fff7df; color: #a15c07; }
+.status-EXCUSED { background: #edf2f7; color: #596780; }
+
+.attendance-report-table tr.is-chronic td {
+  background: #fff8eb;
+}
+
+.attendance-detail-list {
+  display: grid;
+  gap: 4px;
+}

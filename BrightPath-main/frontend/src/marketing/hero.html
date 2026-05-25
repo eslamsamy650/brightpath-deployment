@@ -1,0 +1,82 @@
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="wave-pattern">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+    </svg>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-eyebrow">⭐ Primary &amp; Elementary School Portal</div>
+    <h1>Where Every Child's <span class="highlight">Journey</span> Shines</h1>
+    <p>BrightPath brings teachers, students, and parents together in one safe, friendly platform — tracking progress, sharing assignments, and keeping families connected.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-hero-primary">Get Started Free</a>
+      <a href="#dashboard" class="btn-hero-outline">See the Dashboard →</a>
+    </div>
+    <div class="hero-pills">
+      <div class="hero-pill">✅ Assignments &amp; Grades</div>
+      <div class="hero-pill">💬 Safe Messaging</div>
+      <div class="hero-pill">📅 Attendance</div>
+      <div class="hero-pill">📢 Announcements</div>
+    </div>
+  </div>
+
+  <div class="hero-portals">
+    <div class="portal-card" onclick="location.href='#dashboard'">
+      <div class="pcard-top">
+        <div class="pcard-icon" style="background:rgba(96,165,250,0.18);">🎓</div>
+        <div style="flex:1;">
+          <div class="pcard-title">Teacher Portal</div>
+          <div class="pcard-sub">Manage classes, grades &amp; attendance</div>
+        </div>
+        <div class="pcard-arrow">›</div>
+      </div>
+      <div class="pcard-tags">
+        <span class="ptag">Assignments</span>
+        <span class="ptag">Gradebook</span>
+        <span class="ptag">Attendance</span>
+        <span class="ptag">Reports</span>
+      </div>
+    </div>
+
+    <div class="portal-card" onclick="switchRole('student'); document.getElementById('dashboard').scrollIntoView()">
+      <div class="pcard-top">
+        <div class="pcard-icon" style="background:rgba(34,197,94,0.18);">📚</div>
+        <div style="flex:1;">
+          <div class="pcard-title">Student Portal</div>
+          <div class="pcard-sub">View grades, submit homework &amp; more</div>
+        </div>
+        <div class="pcard-arrow">›</div>
+      </div>
+      <div class="pcard-tags">
+        <span class="ptag">My Homework</span>
+        <span class="ptag">My Grades</span>
+        <span class="ptag">Schedule</span>
+        <span class="ptag">Resources</span>
+      </div>
+    </div>
+
+    <div class="portal-card" onclick="switchRole('parent'); document.getElementById('dashboard').scrollIntoView()">
+      <div class="pcard-top">
+        <div class="pcard-icon" style="background:rgba(249,115,22,0.18);">👨‍👩‍👧</div>
+        <div style="flex:1;">
+          <div class="pcard-title">Parent Portal</div>
+          <div class="pcard-sub">Track your child's progress &amp; communicate</div>
+        </div>
+        <div class="pcard-arrow">›</div>
+      </div>
+      <div class="pcard-tags">
+        <span class="ptag">Progress</span>
+        <span class="ptag">Alerts</span>
+        <span class="ptag">Messages</span>
+        <span class="ptag">Events</span>
+      </div>
+    </div>
+  </div>
+</section>

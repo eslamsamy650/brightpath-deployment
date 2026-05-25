@@ -1,0 +1,17 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: BrightPath ERP
+      - heading "نظام إدارة مدارس عربي أولا للمدارس المصرية" [level=1] [ref=e7]
+      - paragraph [ref=e8]: "سجّل الدخول لفتح لوحة العمل الحقيقية: الطلاب، الفصول، الحضور، الدرجات، والمصروفات اليدوية ضمن نطاق المدرسة."
+    - generic [ref=e9]:
+      - heading "تسجيل الدخول" [level=2] [ref=e10]
+      - paragraph [ref=e11]: جاري فحص الاتصال...
+      - generic [ref=e12]:
+        - text: البريد الإلكتروني
+        - textbox "البريد الإلكتروني" [ref=e13]: admin@brightpath.eg
+      - generic [ref=e14]:
+        - text: كلمة المرور
+        - textbox "كلمة المرور" [ref=e15]: Admin@1234
+      - button "دخول إلى النظام" [ref=e16] [cursor=pointer]
+      - paragraph [ref=e17]: يتم حفظ رمز التحديث فقط. رمز الوصول يبقى في الذاكرة أثناء الجلسة.

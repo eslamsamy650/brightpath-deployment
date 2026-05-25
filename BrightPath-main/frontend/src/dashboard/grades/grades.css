@@ -1,0 +1,50 @@
+.grade-entry-page {
+  display: grid;
+  gap: 16px;
+}
+
+.grade-table-card {
+  background: #fff;
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.grade-table {
+  border-collapse: collapse;
+  min-width: 860px;
+  width: 100%;
+}
+
+.grade-table th,
+.grade-table td {
+  border-bottom: 1px solid var(--bp-border, #d9e1ec);
+  padding: 12px 10px;
+  text-align: start;
+}
+
+.grade-table td span {
+  color: var(--bp-muted, #667085);
+  display: block;
+}
+
+.grade-input {
+  display: grid;
+  gap: 6px;
+}
+
+.grade-input input {
+  border: 1px solid var(--bp-border, #d9e1ec);
+  border-radius: 8px;
+  min-height: 38px;
+  padding: 8px;
+  width: 100px;
+}
+
+.grade-table tr.is-low td {
+  background: #fff5f5;
+}
+
+.grade-table tr.is-high td {
+  background: #f0fff4;
+}

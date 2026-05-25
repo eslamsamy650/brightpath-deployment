@@ -1,0 +1,24 @@
+.load-error-banner {
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+}
+
+.load-error-banner h3 {
+  color: #b42318;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.load-error-banner p {
+  color: #7a271a;
+  margin: 0;
+  word-break: break-word;
+}
+
+.load-error-banner--inline {
+  margin-block: 8px;
+}
