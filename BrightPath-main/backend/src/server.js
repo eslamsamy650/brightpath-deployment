@@ -98,7 +98,7 @@ async function bootstrap() {
 
   app.set('io', io);
 
-  server.listen(env.PORT, () => {
+server.listen(env.PORT, '0.0.0.0', () => {
     logger.info(`🚀  BrightPath API running on port ${env.PORT} [${env.NODE_ENV}]`);
     logger.info(`📖  API prefix: ${env.API_PREFIX}`);
     logger.info(`🔗  Health check: http://localhost:${env.PORT}/health`);
