@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl wget
 
 WORKDIR /app
 
@@ -17,7 +17,6 @@ ENV NODE_ENV=production
 
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 
-CMD node -e "require('http').get('http://localhost:' + (process.env.PORT || 8080) + '/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"
+HEALTHCHECK CMD wget --no-verbose --tries=1 --spider [http://localhost:${PORT}/health](http://localhost:${PORT}/health) || exit 1
 
 CMD ["npm", "start"]
