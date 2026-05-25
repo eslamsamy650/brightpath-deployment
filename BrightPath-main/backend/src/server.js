@@ -124,11 +124,15 @@ server.listen(env.PORT, '0.0.0.0', () => {
   process.on('SIGTERM', () => shutdown('SIGTERM'));
   process.on('SIGINT', () => shutdown('SIGINT'));
   process.on('uncaughtException', err => {
-    logger.error('Uncaught exception', { err });
-  });
-  process.on('unhandledRejection', err => {
-    logger.error('Unhandled rejection', { err });
-  });
+  console.error('UNCAUGHT EXCEPTION:', err);
+});
+
+process.on('unhandledRejection', err => {
+  console.error('UNHANDLED REJECTION:', err);
+});
 }
 
-bootstrap();
+bootstrap().catch(err => {
+  console.error('BOOTSTRAP ERROR:', err);
+  process.exit(1);
+});
