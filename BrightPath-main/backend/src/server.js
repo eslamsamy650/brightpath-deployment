@@ -23,7 +23,7 @@ async function bootstrap() {
 
   const io = new SocketServer(server, {
     cors: {
-      origin: env.FRONTEND_URL,
+      origin: env.FRONTEND_URL || '*',
       methods: ['GET', 'POST'],
       credentials: true,
     },
